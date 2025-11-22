@@ -138,7 +138,7 @@
   }
 
   .skill-badge-primary {
-    @apply bg-gradient-to-r from-primary to-primary-hover text-primary-foreground hover:shadow-glow hover:scale-105 transition-all duration-300;
+    @apply bg-gradient-to-r from-card to-secondary/50 text-foreground border border-border hover:border-primary hover:shadow-md hover:scale-105 transition-all duration-300 cursor-pointer;
   }
 
   /* Project Card Variants */

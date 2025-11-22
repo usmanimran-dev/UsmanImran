@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
-import heroWorkspace from "@/assets/hero-workspace.png";
+import blockchainBg from "@/assets/blockchain-bg.png";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,38 +38,37 @@ const Hero = () => {
     <section id="home" className="min-h-screen relative overflow-hidden">
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse"
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl animate-pulse"
           style={{ animationDuration: '4s' }}></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse"
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/8 rounded-full blur-3xl animate-pulse"
           style={{ animationDuration: '6s', animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-3xl animate-pulse"
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl animate-pulse"
           style={{ animationDuration: '8s', animationDelay: '1s' }}></div>
       </div>
 
-      {/* Blockchain/Fintech Themed Background */}
+      {/* Blockchain/Fintech Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Gradient Base */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-background"></div>
+        {/* Background Image */}
+        <img
+          src={blockchainBg}
+          alt="Blockchain network background"
+          className="w-full h-full object-cover opacity-40"
+        />
 
-        {/* Grid Pattern Overlay */}
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/80"></div>
+
+        {/* Subtle Grid Pattern Overlay */}
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px)
             `,
             backgroundSize: '50px 50px'
           }}
         ></div>
-
-        {/* Glowing Lines */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
-        <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
-
-        {/* Radial Glow Effects */}
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
       </div>
 
       {/* Content */}

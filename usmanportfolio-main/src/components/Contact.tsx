@@ -17,7 +17,7 @@ const Contact = () => {
       title: "Email Me",
       description: "Get in touch directly",
       action: "Send Email",
-      href: "mailto:osmanmuhammad465@gmail.com",
+      href: "mailto:muhammadusman20um@gmail.com",
       primary: false
     },
     {
@@ -66,23 +66,23 @@ const Contact = () => {
                 <Card
                   key={method.title}
                   className={`p-6 transition-all duration-300 hover:shadow-card hover:scale-[1.02] cursor-pointer ${method.primary
-                      ? "bg-gradient-primary text-primary-foreground border-primary"
-                      : "project-card"
+                    ? "bg-gradient-primary text-primary-foreground border-primary"
+                    : "project-card"
                     }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-center gap-6">
                     <div className={`p-3 rounded-lg ${method.primary
-                        ? "bg-white/20"
-                        : "bg-primary/10 text-primary"
+                      ? "bg-white/20"
+                      : "bg-primary/10 text-primary"
                       }`}>
                       {method.icon}
                     </div>
                     <div className="flex-1">
                       <h4 className="text-xl font-semibold mb-2">{method.title}</h4>
                       <p className={`mb-4 ${method.primary
-                          ? "text-primary-foreground/80"
-                          : "text-muted-foreground"
+                        ? "text-primary-foreground/80"
+                        : "text-muted-foreground"
                         }`}>
                         {method.description}
                       </p>

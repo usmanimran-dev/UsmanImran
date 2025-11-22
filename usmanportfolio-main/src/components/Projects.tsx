@@ -8,7 +8,7 @@ import RagImg from '../assets/Rag.png';
 import gmailImg from '../assets/gmail.png';
 import libasImg from '../assets/libas.png';
 import yeloImg from '../assets/yelo.png';
-import dawoodImg from '../assets/dawood.png';import cartistan from '../assets/cartistan.png';
+import dawoodImg from '../assets/dawood.png'; import cartistan from '../assets/cartistan.png';
 import aiImg from '../assets/ai.png';
 import solanaImg from '../assets/solana.jpeg';
 import flowImg from '../assets/flow.png';
@@ -16,7 +16,7 @@ import chatImg from '../assets/chat.jpeg';
 import rhsImg from '../assets/rhs.png';
 import linkedinImg from '../assets/linkedin.png';
 import totkyImg from '../assets/totky.png';
-import cocoImg from '../assets/coco.png'; 
+import cocoImg from '../assets/coco.png';
 import videon8nImg from '../assets/videon8n.png';
 import keyeImg from '../assets/keye.png';
 import greenImg from '../assets/green.png';
@@ -115,7 +115,7 @@ const Projects = () => {
       ],
       featured: true,
       link: "https://github.com/usmanimran-dev/Master",
-      github: "https://github.com/usmanimran-dev/Master",   
+      github: "https://github.com/usmanimran-dev/Master",
     },
     {
       id: -2,
@@ -126,7 +126,7 @@ const Projects = () => {
       tags: ["Gmail", "AI", "Email Automation", "OpenAI", "Productivity", "Smart Replies"],
       featured: true,
       link: "https://n8n.io/workflows/4722-gmail-ai-email-manager/",
-      
+
     },
     {
       id: -1,
@@ -160,7 +160,7 @@ const Projects = () => {
       link: "https://bubble.io/page?id=linkedin-16318&tab=Design&name=index", // Live demo link
       github: undefined // Not applicable for Bubble.io projects
     },
-    
+
     {
       id: 1,
       title: "Dawood Super Store",
@@ -220,7 +220,7 @@ const Projects = () => {
       id: 22,
       title: "Totkay.com – Natural Home Remedies & Beauty Tips",
       description: "A wellness and lifestyle blog sharing simple, proven desi totkay (home remedies) for skincare, hair care, fitness, and everyday health—written in both Urdu and English. Founded by Dr. Nimra Chohan, the platform combines cultural wisdom with modern readability to help readers achieve holistic well-being.",
-      image: totkyImg , // Update this to a specific asset if available
+      image: totkyImg, // Update this to a specific asset if available
       category: "shopify",
       tags: ["Shopify", "Blog", "Wellness", "Home Remedies", "Beauty Tips", "Urdu", "English", "Lifestyle"],
       featured: true,
@@ -320,7 +320,7 @@ const Projects = () => {
       id: 7,
       title: "Web3 Voting dApp-On-Chain Polling System",
       description: "A decentralized voting application built with Solana and Anchor. Users can create proposals, vote securely via Phantom wallet, and view live results—all stored transparently on-chain with a modern React UI.",
-      image:  solanaImg,
+      image: solanaImg,
       category: "web3",
       tags: ["Solana", "Web3", "Voting"],
       featured: true,
@@ -337,7 +337,7 @@ const Projects = () => {
       featured: true,
       link: "https://bubble.io/page?id=open-ai-chatbot-92290&tab=Design&name=index",
     },
-    
+
   ];
 
   const filteredProjects = activeFilter === "all"
@@ -354,7 +354,7 @@ const Projects = () => {
             🚀 <span className="text-gradient-hero">Featured Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of innovative solutions across Web3, AI, and full-stack applications. 
+            A showcase of innovative solutions across Web3, AI, and full-stack applications.
             Each project demonstrates cutting-edge technology implementation.
           </p>
         </div>
@@ -365,11 +365,10 @@ const Projects = () => {
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 ${
-                activeFilter === filter.id
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 ${activeFilter === filter.id
                   ? "bg-primary text-primary-foreground shadow-glow"
                   : "bg-card hover:bg-card-hover text-card-foreground"
-              }`}
+                }`}
             >
               <Filter className="h-4 w-4" />
               {filter.label}
@@ -385,9 +384,8 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className={`project-card overflow-hidden ${
-                project.featured ? "md:col-span-2 lg:col-span-1" : ""
-              }`}
+              className={`project-card overflow-hidden ${project.featured ? "md:col-span-2 lg:col-span-1" : ""
+                }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project Image */}
@@ -415,9 +413,6 @@ const Projects = () => {
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   {project.description}
                 </p>
-                <Button size="sm" variant="secondary" className="mb-4 w-full" disabled>
-                  View More
-                </Button>
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -430,9 +425,9 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
-                  <Button 
-                    size="sm" 
-                    variant="outline" 
+                  <Button
+                    size="sm"
+                    variant="outline"
                     className="flex-1"
                     onClick={(e) => {
                       e.preventDefault();
@@ -445,8 +440,8 @@ const Projects = () => {
                     <Github className="h-4 w-4 mr-2" />
                     Code
                   </Button>
-                  <Button 
-                    size="sm" 
+                  <Button
+                    size="sm"
                     className="flex-1 hero-button"
                     onClick={(e) => {
                       e.preventDefault();
@@ -467,8 +462,8 @@ const Projects = () => {
 
         {/* View More Projects */}
         <div className="text-center mt-12">
-          <Button 
-            className="hero-button" 
+          <Button
+            className="hero-button"
             size="lg"
             onClick={() => window.open('https://github.com/usmanimran-dev', '_blank')}
           >
