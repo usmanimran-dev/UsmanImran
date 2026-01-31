@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Alpine 3D Tech - Ultra-Premium Portfolio Design System */
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 263.4 70% 50.4%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 1.5rem;
+
+  /* Holographic Tokens */
+  --holo-purple: 263.4 70% 50.4%;
+  --holo-cyan: 187 100% 42%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans selection:bg-accent/10 selection:text-accent overflow-x-hidden;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Global Cinematic Texture */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-size: 150px 150px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    opacity: 0.98;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-black tracking-tighter uppercase;
+    line-height: 0.9;
+  }
+
+  section {
+    @apply relative py-20 md:py-32 overflow-hidden;
+  }
+}
+
+@layer components {
+
+  /* Bento Grid Utilities */
+  .bento-grid {
+    @apply grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6;
+  }
+
+  /* High-Fidelity Alpine Glassmorphism */
+  .bento-card {
+    @apply relative overflow-hidden rounded-[3rem] border border-black/[0.08] bg-white p-10 transition-all duration-1000 hover:border-black/[0.15] hover:scale-[0.99];
+  }
+
+  .bento-card:hover {
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.08);
+  }
+
+  /* HUD Elements */
+  .hud-divider {
+    @apply flex items-center gap-6 py-12;
+  }
+
+  .hud-line {
+    @apply h-[1px] flex-1 bg-black/[0.03];
+  }
+
+  .hud-label {
+    @apply text-[9px] font-black tracking-[0.5em] text-black/5 uppercase;
+  }
+
+  /* Holographic Typography */
+  .text-holographic {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-[#8B5CF6] via-[#06B6D4] to-[#D8B4FE] animate-gradient-x;
+  }
+
+  /* Project Tag Styling */
+  .project-tag {
+    @apply inline-flex items-center px-5 py-2 rounded-full text-[10px] font-black tracking-widest uppercase bg-black/[0.03] text-black/60 border border-black/[0.05] backdrop-blur-sm transition-all duration-500 hover:bg-black hover:text-white hover:border-black;
+  }
+}
+
+@keyframes gradient-x {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+}
+
+@keyframes blob {
+
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-blob {
+  animation: blob 10s infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Perspective Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}

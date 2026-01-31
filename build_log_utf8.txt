@@ -1,0 +1,79 @@
+﻿
+> vite_react_shadcn_ts@0.0.0 build
+> vite build
+
+[36mvite v5.4.10 [32mbuilding for production...[36m[39m
+transforming...
+node.exe : Browserslist: browsers 
+data (caniuse-lite) is 6 months 
+old. Please run:
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSp 
+   ecified: (Browserslist: b...ld.  
+   Please run::String) [], Remote   
+ Exception
+    + FullyQualifiedErrorId : Nativ 
+   eCommandError
+ 
+  npx update-browserslist-db@latest
+  Why you should do it regularly: ht
+tps://github.com/browserslist/update
+-db#readme
+[32mΓ£ô[39m 4 modules transformed.
+[31mx[39m Build failed in 2.60s
+[31merror during build:
+[31m[vite:css] [postcss] C:/Users/U
+sman/UsmanImran/usmanportfolio-main/
+src/index.css:62:5: The `hover:shado
+w-[0_0_50px_-12px_rgba(139,` class 
+does not exist. If `hover:shadow-[0_
+0_50px_-12px_rgba(139,` is a custom 
+class, make sure it is defined 
+within a `@layer` directive.[31m
+file: [36mC:/Users/Usman/UsmanImran
+/usmanportfolio-main/src/index.css:6
+2:4[31m
+    at Input.error (C:\Users\Usman\U
+smanImran\usmanportfolio-main\node_m
+odules\postcss\lib\input.js:106:16)
+    at AtRule.error (C:\Users\Usman\
+UsmanImran\usmanportfolio-main\node_
+modules\postcss\lib\node.js:115:32)
+    at processApply (C:\Users\Usman\
+UsmanImran\usmanportfolio-main\node_
+modules\tailwindcss\lib\lib\expandAp
+plyAtRules.js:380:29)
+    at C:\Users\Usman\UsmanImran\usm
+anportfolio-main\node_modules\tailwi
+ndcss\lib\lib\expandApplyAtRules.js:
+551:9
+    at C:\Users\Usman\UsmanImran\usm
+anportfolio-main\node_modules\tailwi
+ndcss\lib\processTailwindFeatures.js
+:55:50
+    at async plugins (C:\Users\Usman
+\UsmanImran\usmanportfolio-main\node
+_modules\tailwindcss\lib\plugin.js:3
+8:17)
+    at async LazyResult.runAsync (C:
+\Users\Usman\UsmanImran\usmanportfol
+io-main\node_modules\postcss\lib\laz
+y-result.js:261:11)
+    at async compileCSS (file:///C:/
+Users/Usman/UsmanImran/usmanportfoli
+o-main/node_modules/vite/dist/node/c
+hunks/dep-BWSbWtLw.js:36897:21)
+    at async Object.transform (file:
+///C:/Users/Usman/UsmanImran/usmanpo
+rtfolio-main/node_modules/vite/dist/
+node/chunks/dep-BWSbWtLw.js:36170:11
+)
+    at async transform (file:///C:/U
+sers/Usman/UsmanImran/usmanportfolio
+-main/node_modules/rollup/dist/es/sh
+ared/node-entry.js:19581:16)[39m
