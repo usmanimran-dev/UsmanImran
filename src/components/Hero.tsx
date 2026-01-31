@@ -116,7 +116,7 @@ const Hero = () => {
             >
               <div className="relative w-full h-full rounded-[3.5rem] overflow-hidden transition-all duration-1000">
                 <img
-                  src={userImg}
+                  src="https://abwdibpowpyrbqbcncng.supabase.co/storage/v1/object/public/projects/WhatsApp%20Image%202026-01-31%20at%209.43.14%20PM.jpeg"
                   alt="Usman Imran Portrait"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
