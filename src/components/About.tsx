@@ -3,7 +3,7 @@ import { Heart, Coffee, Code, Rocket, Award, Target, BookOpen, GraduationCap, Ar
 
 const About = () => {
   const handleDownloadResume = () => {
-    window.open('https://docs.google.com/document/d/16UjVpveS0x3j9AfnSakfU2l2kjfoMC8t7d_sHEuZLg8/edit?tab=t.0#heading=h.8dw6554pc91r', '_blank', 'noopener noreferrer');
+    window.open('https://docs.google.com/document/d/16UjVpveS0x3j9AfnSakfU2l2kjfoMC8t7d_sHEuZLg8/edit?tab=t.0#heading=h.bexukqdrxvy7', '_blank', 'noopener noreferrer');
   };
 
   const certificates = [

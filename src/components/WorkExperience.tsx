@@ -47,7 +47,7 @@ const WorkExperience = () => {
           <div className="h-2 w-32 bg-accent mb-8 hidden md:block" />
           <div className="mb-4">
             <a
-              href="https://docs.google.com/document/d/16UjVpveS0x3j9AfnSakfU2l2kjfoMC8t7d_sHEuZLg8/edit?tab=t.0#heading=h.8dw6554pc91r"
+              href="https://docs.google.com/document/d/16UjVpveS0x3j9AfnSakfU2l2kjfoMC8t7d_sHEuZLg8/edit?tab=t.0#heading=h.bexukqdrxvy7"
               target="_blank"
               className="text-black/40 hover:text-black transition-all flex flex-col items-end gap-1 group font-black tracking-widest text-[10px] uppercase"
             >
