@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Coffee, Code, Rocket, Award, Target, BookOpen, GraduationCap, ArrowUpRight } from "lucide-react";
+import { Heart, Coffee, Code, Rocket, Award, Target, BookOpen, GraduationCap, ArrowUpRight, ShieldCheck, Activity, Lock, Cpu } from "lucide-react";
 
 const About = () => {
   const handleDownloadResume = () => {
@@ -14,80 +14,79 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="bg-white relative overflow-hidden">
+    <section id="about" className="bg-background relative overflow-hidden pt-20">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
         {/* HUD Transition Section */}
-        <div className="hud-divider mb-8">
-          <div className="hud-line" />
-          <div className="hud-label">S_02 // SYSTEM_INTEL</div>
-          <div className="hud-line" />
+        <div className="flex items-center gap-6 mb-12 opacity-30">
+          <div className="h-px w-32 bg-primary" />
+          <div className="text-[10px] font-bold tracking-[0.5em] text-white uppercase">S_02 // ABOUT_ME</div>
+          <div className="h-px flex-1 bg-white/10" />
         </div>
 
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="space-y-4">
-            <h2 className="text-7xl md:text-9xl font-black tracking-tighter text-black uppercase leading-[0.8]">
+            <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white uppercase leading-[0.85] md:leading-[0.8]">
               ABOUT <br />
-              <span className="text-black/10 italic lowercase">Me</span>
+              <span className="text-primary italic">ME</span>
             </h2>
-            <div className="h-1.5 w-32 bg-accent mt-6" />
           </div>
-          <div className="text-[10px] font-black text-black/20 tracking-[0.4em] uppercase">Professional Profile</div>
+          <div className="text-[10px] font-bold text-white/20 tracking-[0.4em] uppercase">Professional_Profile_v3.0</div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
 
           {/* Main Bio Card */}
-          <div className="md:col-span-4 lg:col-span-4 bento-card flex flex-col justify-between space-y-16">
+          <div className="md:col-span-4 lg:col-span-4 fin-card flex flex-col justify-between space-y-16">
             <div className="space-y-10">
-              <div className="text-[10px] font-black text-accent tracking-[0.5em] uppercase border-l-2 border-accent pl-4">Engineering Philosophy</div>
-              <h3 className="text-5xl md:text-6xl font-black text-black leading-[0.85] tracking-tighter uppercase">
+              <div className="text-[10px] font-bold text-primary tracking-[0.5em] uppercase border-l-2 border-primary pl-4">Core Philosophy</div>
+              <h3 className="text-5xl md:text-7xl font-bold text-white leading-[0.85] tracking-tighter uppercase">
                 Bridging complex logic <br />
-                with <span className="text-black/30 italic lowercase font-serif">seamless experiences.</span>
+                with <span className="text-primary/40 italic">clean code.</span>
               </h3>
-              <div className="space-y-6 text-black/50 text-2xl font-bold leading-none max-w-2xl uppercase tracking-tight">
+              <div className="space-y-8 text-white/40 text-2xl font-medium leading-tight max-w-2xl uppercase tracking-tighter">
                 <p>
-                  Specialized in architecting scalable Full-Stack applications and delivering high-impact digital solutions.
+                  Specialized in architecting scalable Full-Stack applications and delivering high-impact software solutions.
                 </p>
-                <div className="h-px w-full bg-black/5" />
+                <div className="h-[1px] w-full bg-white/5" />
                 <p>
-                  Designing robust, data-driven systems leveraging Modern Web Frameworks and Cloud Architecture.
+                  Designing robust, data-driven systems leveraging Modern Web Frameworks and AWS Cloud Architecture.
                 </p>
               </div>
             </div>
 
             <button
               onClick={handleDownloadResume}
-              className="group w-fit flex items-center gap-6 px-12 py-6 bg-black text-white rounded-full font-black text-xs tracking-[0.4em] uppercase transition-all duration-500 hover:scale-105 shadow-2xl"
+              className="group w-fit flex items-center gap-6 px-12 py-6 bg-primary text-primary-foreground rounded-lg font-bold text-xs tracking-[0.4em] uppercase transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.5)]"
             >
-              Curriculum Vitae <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform" />
+              CV_ACCESS_LEDGER <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform" />
             </button>
           </div>
 
           {/* Mission Card */}
-          <div className="md:col-span-2 lg:col-span-2 bento-card bg-black/[0.01] group flex flex-col justify-between min-h-[400px]">
-            <div className="p-6 bg-black text-white rounded-[2rem] w-fit group-hover:bg-accent transition-colors duration-500 shadow-2xl">
-              <Target className="w-10 h-10" />
+          <div className="md:col-span-2 lg:col-span-2 fin-card flex flex-col justify-between min-h-[400px]">
+            <div className="p-5 bg-white/5 border border-white/10 rounded-xl w-fit group-hover:border-primary/50 transition-colors">
+              <Target className="w-10 h-10 text-primary" />
             </div>
             <div className="space-y-6">
-              <div className="text-[10px] font-black text-black/20 tracking-widest uppercase">Technical Vision</div>
-              <p className="text-3xl font-black text-black leading-none tracking-tighter uppercase">
+              <div className="text-[10px] font-bold text-white/20 tracking-widest uppercase">Technical_Mission</div>
+              <p className="text-3xl font-bold text-white leading-none tracking-tighter uppercase italic">
                 TO ENGINEER SYSTEMS THAT EMPOWER USERS AND DRIVE INNOVATION.
               </p>
             </div>
           </div>
 
           {/* Certificates Bento */}
-          <div className="md:col-span-3 lg:col-span-3 bento-card space-y-16">
-            <div className="flex justify-between items-center border-b border-black/5 pb-8">
-              <div className="text-[10px] font-black text-black/20 tracking-[0.4em] uppercase">Core Certifications</div>
-              <Award className="w-6 h-6 text-accent" />
+          <div className="md:col-span-3 lg:col-span-3 fin-card space-y-16">
+            <div className="flex justify-between items-center border-b border-white/5 pb-8">
+              <div className="text-[10px] font-bold text-white/20 tracking-[0.4em] uppercase">Security_Certifications</div>
+              <Activity className="w-6 h-6 text-primary animate-pulse" />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {certificates.map((cert, i) => (
                 <div key={i} className="space-y-2 group cursor-default">
-                  <div className="text-xs font-black text-black group-hover:text-accent transition-colors uppercase tracking-tight leading-none">{cert.title}</div>
-                  <div className="text-[8px] font-black text-black/20 uppercase tracking-[0.3em]">{cert.issuer}</div>
+                  <div className="text-sm font-bold text-white group-hover:text-primary transition-colors uppercase tracking-tight leading-none">{cert.title}</div>
+                  <div className="text-[9px] font-bold text-white/20 uppercase tracking-[0.3em]">{cert.issuer}</div>
                 </div>
               ))}
             </div>
@@ -95,21 +94,21 @@ const About = () => {
 
           {/* Values Row */}
           <div className="md:col-span-3 lg:col-span-3 grid grid-cols-2 gap-6">
-            <div className="bento-card flex flex-col justify-between hover:bg-black group cursor-pointer transition-all duration-700">
-              <Code className="w-10 h-10 text-black/10 group-hover:text-white transition-colors" />
-              <div className="text-xl font-black text-black group-hover:text-white uppercase tracking-tighter">Clean Code</div>
+            <div className="fin-card flex flex-col justify-between hover:bg-white/[0.04] group cursor-pointer transition-all">
+              <Lock className="w-8 h-8 text-white/10 group-hover:text-primary transition-colors" />
+              <div className="text-xl font-bold text-white uppercase tracking-tight">Encrypted</div>
             </div>
-            <div className="bento-card flex flex-col justify-between hover:bg-black group cursor-pointer transition-all duration-700">
-              <Rocket className="w-10 h-10 text-black/10 group-hover:text-white transition-colors" />
-              <div className="text-xl font-black text-black group-hover:text-white uppercase tracking-tighter">Scale</div>
+            <div className="fin-card flex flex-col justify-between hover:bg-white/[0.04] group cursor-pointer transition-all">
+              <ShieldCheck className="w-8 h-8 text-white/10 group-hover:text-primary transition-colors" />
+              <div className="text-xl font-bold text-white uppercase tracking-tight">Secure</div>
             </div>
-            <div className="bento-card flex flex-col justify-between hover:bg-black group cursor-pointer transition-all duration-700">
-              <Heart className="w-10 h-10 text-black/10 group-hover:text-white transition-colors" />
-              <div className="text-xl font-black text-black group-hover:text-white uppercase tracking-tighter">Precision</div>
+            <div className="fin-card flex flex-col justify-between hover:bg-white/[0.04] group cursor-pointer transition-all">
+              <Cpu className="w-8 h-8 text-white/10 group-hover:text-primary transition-colors" />
+              <div className="text-xl font-bold text-white uppercase tracking-tight">Scalable</div>
             </div>
-            <div className="bento-card flex flex-col justify-between hover:bg-black group cursor-pointer transition-all duration-700" onClick={() => window.location.href = "#contact"}>
-              <Coffee className="w-10 h-10 text-black/10 group-hover:text-white transition-colors" />
-              <div className="text-xl font-black text-black group-hover:text-white uppercase tracking-tighter">Connect</div>
+            <div className="fin-card flex flex-col justify-between hover:bg-white/[0.04] group cursor-pointer transition-all" onClick={() => window.location.href = "#contact"}>
+              <Activity className="w-8 h-8 text-white/10 group-hover:text-primary transition-colors" />
+              <div className="text-xl font-bold text-white uppercase tracking-tight">Live_Sync</div>
             </div>
           </div>
 

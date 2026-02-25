@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Github, Linkedin, MousePointer2, ChevronDown, Sparkles, Binary, Cpu, Globe, Radio, Database, Zap, Terminal } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, MousePointer2, ChevronDown, Sparkles, Binary, Cpu, Globe, Radio, Database, Zap, Terminal, TrendingUp, ShieldCheck, Activity } from "lucide-react";
 import { useEffect, useState } from "react";
-import userImg from '../assets/user-profile.jpeg';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -17,160 +16,108 @@ const Hero = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  return (
-    <section id="home" className="relative min-h-[110vh] flex flex-col justify-center pt-32 pb-20 overflow-hidden bg-white">
+  const domains = [
+    "Full-Stack Development",
+    "Enterprise Web Apps",
+    "E-Commerce Solutions",
+    "Cross-Platform Mobile",
+    "Cloud Infrastructure",
+    "No-Code Automations"
+  ];
 
-      {/* Background Layer: Multi-layered Technical Grid */}
-      <div className="absolute inset-0 pointer-events-none transition-transform duration-1000 ease-out"
-        style={{ transform: `translate(${mousePosition.x * 0.1}px, ${mousePosition.y * 0.1}px)` }}>
-        <div className="absolute inset-0 opacity-[0.03]"
-          style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
-        <div className="absolute inset-0 opacity-[0.01]"
-          style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-      </div>
+  return (
+    <section id="home" className="relative min-h-screen flex flex-col justify-center pt-28 pb-32 overflow-hidden bg-background">
+
+      {/* Fintech Scanner Line */}
+      <div className="scanline" />
 
       {/* Global Ambiance Glows */}
-      <div className="absolute top-0 right-0 w-[1200px] h-[1200px] bg-[#8B5CF6]/5 rounded-full blur-[200px] -mr-[400px] -mt-[400px] animate-blob" />
-      <div className="absolute bottom-0 left-0 w-[1000px] h-[1000px] bg-[#06B6D4]/5 rounded-full blur-[180px] -ml-[300px] -mb-[300px] animate-blob" style={{ animationDelay: '-7s' }} />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[800px] bg-primary/5 rounded-full blur-[200px] -mt-[300px]" />
+      <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[180px] -ml-[300px] -mb-[300px]" />
+      <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[150px] -mr-[200px]" />
 
-      <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
-          {/* LEFT: Massive Typographic Narrative */}
-          <div className="lg:col-span-8 flex flex-col items-start text-left space-y-16">
-
-            {/* Professional Status Bar */}
-            <div className="flex flex-wrap items-center gap-6 animate-fade-in">
-              <div className="flex items-center gap-3 px-4 py-2 bg-black text-white rounded-md">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-[10px] font-black tracking-[0.4em] uppercase">AVAILABLE_FOR_HIRE</span>
-              </div>
-              <div className="flex items-center gap-4 text-[10px] font-black tracking-[0.4em] text-black/30 uppercase border-l border-black/10 pl-6">
-                <span>EST. 2023</span>
-                <span className="h-1 w-1 rounded-full bg-accent" />
-                <span>BASED_IN_KARACHI</span>
-              </div>
+        {/* Status Bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-16 animate-fade-in relative z-20">
+          <div className="flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-md backdrop-blur-md">
+            <div className="fin-indicator">
+              <span className="fin-indicator-ping" />
+              <span className="fin-indicator-dot" />
             </div>
-
-            {/* Massive Hero Headline */}
-            <div
-              className="space-y-8 relative"
-              style={{ transform: `translate(${mousePosition.x * -0.3}px, ${mousePosition.y * -0.3}px)` }}
-            >
-              <h1 className="text-[10vw] lg:text-[8.5rem] font-black text-black leading-[0.8] tracking-tighter uppercase select-none">
-                FULL-STACK <br />
-                <span className="text-holographic italic">SOFTWARE</span> <br />
-                ENGINEER
-              </h1>
-
-              <div className="max-w-2xl space-y-10 pl-2">
-                <p className="text-2xl md:text-3xl font-black text-black/30 tracking-tight uppercase leading-none">
-                  Building high-performance, <br />
-                  scalable web ecosystems with <br />
-                  <span className="text-black">modern engineering precision.</span>
-                </p>
-
-                {/* Professional Domains */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-4">
-                  <div className="space-y-2 border-l-2 border-accent pl-4">
-                    <div className="text-[8px] font-black text-black/20 uppercase tracking-[0.3em]">Frontend_Architecture</div>
-                    <div className="text-xs font-black text-black uppercase tracking-widest">React & Next.js</div>
-                  </div>
-                  <div className="space-y-2 border-l-2 border-[#06B6D4] pl-4">
-                    <div className="text-[8px] font-black text-black/20 uppercase tracking-[0.3em]">Backend_Systems</div>
-                    <div className="text-xs font-black text-black uppercase tracking-widest">Node & Cloud</div>
-                  </div>
-                  <div className="space-y-2 border-l-2 border-black/10 pl-4">
-                    <div className="text-[8px] font-black text-black/20 uppercase tracking-[0.3em]">Mobile_Solutions</div>
-                    <div className="text-xs font-black text-black uppercase tracking-widest">Flutter & Native</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Premium CTA Segment */}
-            <div className="flex flex-col sm:flex-row items-center gap-10 w-full sm:w-auto pt-8">
-              <a
-                href="#projects"
-                className="w-full sm:w-auto relative group"
-              >
-                <div className="relative px-16 py-7 bg-black text-white rounded-full font-black text-xs tracking-[0.5em] uppercase transition-all duration-500 hover:scale-105 active:scale-95 flex items-center gap-4">
-                  ACCESS REPOSITORY <ArrowUpRight className="w-4 h-4" />
-                </div>
-              </a>
-              <a
-                href="#contact"
-                className="group flex flex-col items-start gap-1"
-              >
-                <span className="text-[8px] font-black tracking-[0.4em] text-black/20 uppercase">COLLABORATION_LAYER</span>
-                <span className="text-sm font-black text-black tracking-[0.2em] uppercase border-b-2 border-black/5 group-hover:border-black transition-all">ESTABLISH_LINK</span>
-              </a>
-            </div>
+            <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-primary text-center">AVAILABLE_FOR_HIRE // OPEN_TO_WORK</span>
           </div>
-
-          {/* RIGHT: Ultra-High-Fidelity Artifact Portrait */}
-          <div className="lg:col-span-4 relative flex justify-center lg:justify-end py-12">
-            <div
-              className="relative w-full max-w-[550px] aspect-[4/5] bg-white rounded-[5rem] p-5 shadow-[0_100px_150px_-40px_rgba(0,0,0,0.15)] overflow-hidden border border-black/[0.05] transition-all duration-1000"
-              style={{ transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px) rotate(${mousePosition.x * 0.08}deg)` }}
-            >
-              <div className="relative w-full h-full rounded-[3.5rem] overflow-hidden transition-all duration-1000">
-                <img
-                  src="https://abwdibpowpyrbqbcncng.supabase.co/storage/v1/object/public/projects/WhatsApp%20Image%202026-01-31%20at%209.43.14%20PM.jpeg"
-                  alt="Usman Imran Portrait"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-
-                {/* Advanced Technical Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent opacity-40" />
-                <div className="absolute top-12 right-12 flex flex-col items-end gap-3 z-30">
-                  <div className="w-16 h-[2px] bg-accent" />
-                  <span className="text-[10px] font-black tracking-[0.5em] text-black/40 uppercase">ID_USMAN_V2</span>
-                </div>
-
-                {/* HUD Data Decals on Image */}
-                <div className="absolute bottom-12 left-12 z-30 space-y-2 opacity-40">
-                  <div className="flex items-center gap-2 text-[8px] font-black text-black tracking-widest uppercase bg-white/50 backdrop-blur-md px-3 py-1.5 rounded-sm">
-                    <Zap className="w-2 h-2 text-accent" /> High_Impact
-                  </div>
-                  <div className="flex items-center gap-2 text-[8px] font-black text-black tracking-widest uppercase bg-white/50 backdrop-blur-md px-3 py-1.5 rounded-sm">
-                    <Database className="w-2 h-2 text-[#06B6D4]" /> Scale_Ready
-                  </div>
-                </div>
-              </div>
-
-              {/* Corner Framing Detail */}
-              <div className="absolute top-10 left-10 w-12 h-12 border-t-2 border-l-2 border-black/[0.05]" />
-              <div className="absolute bottom-10 right-10 w-12 h-12 border-b-2 border-r-2 border-black/[0.05]" />
-              <div className="absolute top-12 left-12 w-6 h-6 border-t-2 border-l-2 border-accent/20 animate-pulse" />
-              <div className="absolute bottom-12 right-12 w-6 h-6 border-b-2 border-r-2 border-[#06B6D4]/20 animate-pulse" />
-            </div>
-
-            {/* floating Decorative Labels */}
-            <div className="absolute -left-12 top-1/2 -rotate-90 origin-center hidden xl:block opacity-10">
-              <span className="text-6xl font-black tracking-tighter text-black uppercase">PORTAL_01</span>
-            </div>
+          <div className="flex items-center gap-4 text-[10px] font-bold tracking-[0.4em] text-foreground/30 uppercase sm:border-l border-white/10 sm:pl-6">
+            <TrendingUp className="w-3 h-3 text-primary animate-pulse hidden sm:block" />
+            <span>UPTIME: 99.9%</span>
+            <span className="h-1 w-1 rounded-full bg-primary/50" />
+            <span>LATENCY: 12ms</span>
           </div>
-
         </div>
+
+        {/* Hero Headline — Centered, proportional */}
+        <div
+          className="text-center mb-12 sm:mb-16 relative z-20"
+          style={{ transform: `translate(${mousePosition.x * -0.15}px, ${mousePosition.y * -0.15}px)` }}
+        >
+          <h1 className="text-[12vw] sm:text-7xl md:text-8xl lg:text-9xl font-bold text-foreground leading-[0.85] tracking-tighter uppercase select-none mb-8 sm:mb-10">
+            SOFTWARE<br />
+            <span className="text-primary italic drop-shadow-[0_0_20px_rgba(34,197,94,0.3)]">ENGINEER</span><br />
+            & DEVELOPER
+          </h1>
+
+          <p className="text-base sm:text-lg md:text-2xl font-medium text-foreground/40 tracking-tight uppercase leading-relaxed max-w-2xl mx-auto px-4">
+            Building scalable, modern<br className="hidden sm:block" />
+            <span className="text-foreground"> web & mobile applications.</span>
+          </p>
+        </div>
+
+        {/* Expertise Domain Tags — Inline Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
+          {domains.map((domain, i) => (
+            <div
+              key={domain}
+              className="px-5 py-2.5 rounded-lg border border-white/10 bg-white/[0.02] backdrop-blur-sm text-xs font-bold text-foreground/60 tracking-widest uppercase hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all duration-300 cursor-default"
+            >
+              {domain}
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+          <a href="#projects">
+            <div className="btn-fin flex items-center gap-4 justify-center px-10 py-4">
+              VIEW PROJECTS <ArrowUpRight className="w-4 h-4" />
+            </div>
+          </a>
+          <a
+            href="#contact"
+            className="group flex flex-col items-center gap-1"
+          >
+            <span className="text-[8px] font-bold tracking-[0.4em] text-primary uppercase">GET_IN_TOUCH</span>
+            <span className="text-sm font-bold text-foreground tracking-[0.2em] uppercase border-b-2 border-white/5 group-hover:border-primary transition-all">CONTACT_ME</span>
+          </a>
+        </div>
+
       </div>
 
       {/* Decorative Technical Segments Background */}
       <div className="absolute left-10 top-1/2 -translate-y-1/2 flex flex-col gap-64 opacity-5 pointer-events-none">
-        <Terminal className="w-12 h-12" />
-        <Globe className="w-12 h-12" />
+        <Database className="w-12 h-12" />
+        <Activity className="w-12 h-12" />
         <Zap className="w-12 h-12" />
       </div>
 
       {/* Bottom Floating Technical Marquee */}
-      <div className="absolute bottom-12 left-0 right-0 py-6 bg-black/[0.01] border-y border-black/[0.03] overflow-hidden whitespace-nowrap hidden lg:block">
+      <div className="absolute bottom-0 left-0 right-0 py-5 bg-white/[0.02] border-y border-white/[0.05] overflow-hidden whitespace-nowrap hidden lg:block">
         <div className="flex items-center gap-16 animate-marquee">
           {[...Array(15)].map((_, i) => (
             <div key={i} className="flex items-center gap-8">
-              <span className="text-[9px] font-black tracking-[0.5em] text-black/10 uppercase italic">
-                {`CORE::SEGMENT_${i.toString().padStart(2, '0')} // STATUS_OPTIMAL`}
+              <span className="text-[9px] font-bold tracking-[0.5em] text-foreground/20 uppercase italic">
+                {`SYS_MODULE::NODE_${i.toString().padStart(2, '0')} // BUILD: PRODUCTION_READY`}
               </span>
-              <div className="w-2 h-[1px] bg-black/10" />
+              <div className="w-2 h-[1px] bg-primary/20" />
             </div>
           ))}
         </div>

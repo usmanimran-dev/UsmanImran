@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Filter, ArrowUpRight, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ExternalLink, Github, Filter, ArrowUpRight, ArrowRight, ChevronDown, ChevronUp, Shield, Activity, Lock } from "lucide-react";
 import { useState, useMemo } from "react";
 import greenImg from '../assets/green.png';
 import keyeImg from '../assets/keye.png';
@@ -20,56 +20,67 @@ const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
   const filters = [
-    { id: "all", label: "Featured" },
-    { id: "full-stack", label: "Engineering" },
-    { id: "shopify-wordpress", label: "E-commerce" },
+    { id: "all", label: "All" },
+    { id: "full-stack", label: "Full-Stack" },
+    { id: "shopify-wordpress", label: "E-Commerce" },
     { id: "nocode", label: "No-Code" }
   ];
 
   const projects = [
     {
+      id: 20260225,
+      title: "NGO Assist",
+      subtitle: "Aid Distribution Platform",
+      description: "A full-stack aid distribution platform using Flutter (Web & Mobile), Node.js, and Prisma. Manages beneficiary registration, verification workflows, vendor-based assistance redemption, and audit monitoring with role-based access control.",
+      image: "https://oxputeaplbndzolsnyto.supabase.co/storage/v1/object/sign/Usman%20Imran/Screenshot%202026-02-25%20204034.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wNmIzYmExMi1hYzlhLTQ3YTQtOTNkNS0xYTEyMzE4NTM4NTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJVc21hbiBJbXJhbi9TY3JlZW5zaG90IDIwMjYtMDItMjUgMjA0MDM0LnBuZyIsImlhdCI6MTc3MjAzNDI1MywiZXhwIjoxODAzNTcwMjUzfQ.NV-sbWkxZb15E2zX83ZHuUzoBiPJ1d9eRpIb_JLxOIQ",
+      category: "full-stack",
+      tags: ["Flutter", "Node.js", "Prisma"],
+      link: "https://ngo.virtuohr.com"
+    },
+
+    {
       id: 20260129,
       title: "Smart Pump",
       subtitle: "IoT Telemetry & ERP",
-      description: "A next-generation ERP for fuel stations that digitizes operations and prevents loss through real-time telemetry. Login: usman@gmail.com | Pwd: usman123",
-      image: "https://abwdibpowpyrbqbcncng.supabase.co/storage/v1/object/public/projects/Screenshot%202026-01-29%20220645.png",
+      description: "A secure ERP system for fuel stations that monitors real-time transaction pipelines to prevent revenue loss. Login: usman@gmail.com | Pwd: usman123",
+      image: "https://oxputeaplbndzolsnyto.supabase.co/storage/v1/object/sign/Usman%20Imran/Screenshot%202026-01-29%20220645.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wNmIzYmExMi1hYzlhLTQ3YTQtOTNkNS0xYTEyMzE4NTM4NTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJVc21hbiBJbXJhbi9TY3JlZW5zaG90IDIwMjYtMDEtMjkgMjIwNjQ1LnBuZyIsImlhdCI6MTc3MTg3OTM4NiwiZXhwIjoxODAzNDE1Mzg2fQ.7s7Y_XInBw1mi_QiiHKVJIWPWlELnxMfaK7e6U3LlVw",
       category: "full-stack",
-      tags: ["Angular", "Firebase", "IoT"],
+      tags: ["Angular", "Supabase", "IoT"],
       link: "https://smart-pump-2eyt.vercel.app/login",
       github: "https://github.com/usmanimran-dev/SmartPump"
     },
     {
-      id: 20260132,
-      title: "Zyfloatix",
-      subtitle: "Premium Digital Agency Ecosystem",
-      description: "A high-performance digital agency platform featuring ultra-modern aesthetics, micro-interactions, and a focus on visual storytelling.",
-      image: "https://abwdibpowpyrbqbcncng.supabase.co/storage/v1/object/public/projects/Screenshot%202026-01-30%20035422.png",
+      id: 20260130,
+      title: "Velora",
+      subtitle: "Dating Discovery App",
+      description: "A modern, secure dating platform featuring real-time matching and encrypted communication channels.",
+      image: "https://oxputeaplbndzolsnyto.supabase.co/storage/v1/object/sign/Usman%20Imran/Screenshot%202026-01-30%20035558.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wNmIzYmExMi1hYzlhLTQ3YTQtOTNkNS0xYTEyMzE4NTM4NTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJVc21hbiBJbXJhbi9TY3JlZW5zaG90IDIwMjYtMDEtMzAgMDM1NTU4LnBuZyIsImlhdCI6MTc3MTg3OTQyOSwiZXhwIjoxODAzNDE1NDI5fQ.4kGdL9utvVG8wS-08P1m3cx6SgXtcoMPmeJABUBM8bY",
       category: "full-stack",
-      tags: ["React", "Motion", "Tailwind"],
-      link: "https://zyfloatix-2wcu.vercel.app/",
-      github: "https://github.com/usmanimran-dev/Zyfloatix"
+      tags: ["Angular", "Firebase", "Logic"],
+      link: "https://datingapp-arxi.vercel.app/signup",
+      github: "https://github.com/usmanimran-dev/datingapp"
     },
     {
       id: 20260131,
-      title: "Yelo",
-      subtitle: "Local Discovery Platform",
-      description: "Pakistan’s leading local business discovery engine, engineered for extreme performance and effortless user navigation.",
-      image: "https://abwdibpowpyrbqbcncng.supabase.co/storage/v1/object/public/projects/Screenshot%202026-01-30%20035500.png",
+      title: "Yelo Search",
+      subtitle: "Market Discovery Engine",
+      description: "A high-performance indexing engine for local market intelligence, optimized for low-latency search and data retrieval.",
+      image: "https://oxputeaplbndzolsnyto.supabase.co/storage/v1/object/sign/Usman%20Imran/Screenshot%202026-01-30%20035500.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wNmIzYmExMi1hYzlhLTQ3YTQtOTNkNS0xYTEyMzE4NTM4NTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJVc21hbiBJbXJhbi9TY3JlZW5zaG90IDIwMjYtMDEtMzAgMDM1NTAwLnBuZyIsImlhdCI6MTc3MTg3OTQ1MCwiZXhwIjoxODAzNDE1NDUwfQ.owfuUOWWmbTdUR1UeW1ZsnxBcjkmYen4hg_HHAZ5XOo",
       category: "full-stack",
-      tags: ["React", "Search", "SEO"],
+      tags: ["React", "Cloud", "SEO"],
       link: "https://pakistan-finds-red.vercel.app/",
       github: "https://github.com/usmanimran-dev/pakistan-finds-red"
     },
     {
-      id: 20260130,
-      title: "Velora Dating App",
-      subtitle: "Real-time Connections",
-      description: "A modern dating application designed for secure, fast, and intuitive connections. Features real-time messaging and match discovery.",
-      image: "https://abwdibpowpyrbqbcncng.supabase.co/storage/v1/object/public/projects/Screenshot%202026-01-30%20035558.png",
+      id: 20260132,
+      title: "Zyfloatix",
+      subtitle: "Digital Treasury Ecosystem",
+      description: "A high-fidelity platform for digital asset firms, featuring encrypted data visualization and ultra-modern terminal aesthetics.",
+      image: "https://oxputeaplbndzolsnyto.supabase.co/storage/v1/object/sign/Usman%20Imran/Screenshot%202026-01-30%20035422.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wNmIzYmExMi1hYzlhLTQ3YTQtOTNkNS0xYTEyMzE4NTM4NTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJVc21hbiBJbXJhbi9TY3JlZW5zaG90IDIwMjYtMDEtMzAgMDM1NDIyLnBuZyIsImlhdCI6MTc3MTg3OTQ3MywiZXhwIjoxODAzNDE1NDczfQ.eFbN5eP05R6asL0-AhaQ_etaNZ4qnqR3mRf0XiBf6OA",
       category: "full-stack",
-      tags: ["Angular", "Firebase", "FCM"],
-      link: "https://datingapp-arxi.vercel.app/signup",
-      github: "https://github.com/usmanimran-dev/datingapp"
+      tags: ["Next.js", "Framer", "Tailwind"],
+      link: "https://zyfloatix-2wcu.vercel.app/",
+      github: "https://github.com/usmanimran-dev/Zyfloatix"
     },
     {
       id: 20250813,
@@ -202,6 +213,17 @@ const Projects = () => {
       category: "nocode",
       tags: ["Bubble.io", "AI", "Management"],
       link: "https://demo-app-63324.bubbleapps.io/version-test/?&v=projects"
+    },
+    {
+      id: 20260221,
+      title: "Diamond Sync Engine",
+      subtitle: "B2B Shopify Integration",
+      description: "A custom Node.js desktop engine that bridges a B2B diamond supplier API to Shopify. Auto-syncs 1,200+ products daily with 60+ metafields, custom OAuth, and zero cloud hosting costs.",
+      image: "https://oxputeaplbndzolsnyto.supabase.co/storage/v1/object/sign/Usman%20Imran/WhatsApp%20Image%202026-02-21%20at%207.14.23%20PM.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wNmIzYmExMi1hYzlhLTQ3YTQtOTNkNS0xYTEyMzE4NTM4NTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJVc21hbiBJbXJhbi9XaGF0c0FwcCBJbWFnZSAyMDI2LTAyLTIxIGF0IDcuMTQuMjMgUE0uanBlZyIsImlhdCI6MTc3MjAzNTI4NCwiZXhwIjoxODAzNTcxMjg0fQ.m3IUjzIuOCXRRl3pLEjrstbMiLFRRy7UzbCNGH2nlpQ",
+      category: "full-stack",
+      tags: ["Node.js", "Shopify API", "Automation"],
+      link: "https://github.com/usmanimran-dev/CGD-API-Project",
+      github: "https://github.com/usmanimran-dev/CGD-API-Project"
     }
   ];
 
@@ -226,25 +248,25 @@ const Projects = () => {
   }, [activeFilter]);
 
   return (
-    <section id="projects" className="bg-white relative">
+    <section id="projects" className="bg-background relative pt-10">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
-        {/* HUD Transition Section */}
-        <div className="hud-divider mb-8">
-          <div className="hud-line" />
-          <div className="hud-label">S_04 // ENGINEERING_PORTFOLIO</div>
-          <div className="hud-line" />
+        {/* Fintech Header Transition */}
+        <div className="flex items-center gap-6 mb-12 opacity-30">
+          <div className="h-px w-32 bg-primary" />
+          <div className="text-[10px] font-bold tracking-[0.5em] text-white uppercase">S_04 // MY_PROJECTS</div>
+          <div className="h-px flex-1 bg-white/10" />
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-12">
           <div className="space-y-4">
-            <h2 className="text-7xl md:text-9xl font-black tracking-tighter text-black uppercase leading-[0.8]">
-              PROJECT <br />
-              <span className="text-black/10 italic lowercase">Showcase</span>
+            <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white uppercase leading-[0.85] md:leading-[0.8]">
+              MY <br />
+              <span className="text-primary italic">PROJECTS</span>
             </h2>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2">
             {filters.map((filter) => (
               <button
                 key={filter.id}
@@ -252,9 +274,9 @@ const Projects = () => {
                   setActiveFilter(filter.id);
                   setShowAll(false);
                 }}
-                className={`px-10 py-5 rounded-full text-[10px] font-black tracking-[0.4em] uppercase transition-all duration-700 ${activeFilter === filter.id
-                  ? "bg-black text-white shadow-2xl scale-105"
-                  : "bg-black/[0.02] text-black/30 hover:text-black hover:bg-black/[0.1]"
+                className={`px-8 py-4 rounded-lg text-[10px] font-bold tracking-[0.4em] uppercase transition-all duration-300 border ${activeFilter === filter.id
+                  ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_-5px_rgba(34,197,94,0.4)]"
+                  : "bg-white/5 text-white/40 border-white/10 hover:border-white/20 hover:text-white"
                   }`}
               >
                 {filter.label}
@@ -263,74 +285,79 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="space-y-24">
+        <div className="space-y-12 lg:space-y-16">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="group relative grid grid-cols-1 lg:grid-cols-12 gap-20 items-center"
+              className="fin-card grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center group cursor-default"
             >
-              <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden rounded-[4rem] bg-black/[0.02] border border-black/[0.05] group-hover:border-black/[0.15] transition-all duration-1000 shadow-sm group-hover:shadow-[0_80px_150px_-40px_rgba(0,0,0,0.2)]">
+              <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden rounded-xl bg-background border border-white/10 transition-all duration-700">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+
+                {/* Image Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+
+                <div className="absolute top-4 left-4 lg:top-6 lg:left-6 p-2 lg:p-3 bg-black/60 backdrop-blur-md rounded-lg border border-white/10 opacity-100">
+                  <div className="flex items-center gap-1.5 lg:gap-2 text-[8px] font-bold text-primary tracking-widest uppercase">
+                    <Lock className="w-2.5 h-2.5" /> <span className="hidden sm:inline">PROJECT_</span>{index + 1}
+                  </div>
+                </div>
+
                 <a
                   href={project.link}
                   target="_blank"
-                  className="absolute bottom-12 right-12 w-24 h-24 rounded-full bg-black text-white flex items-center justify-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 hover:scale-110 shadow-2xl z-30"
+                  className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6 w-12 h-12 lg:w-16 lg:h-16 rounded-lg bg-primary text-primary-foreground flex items-center justify-center lg:translate-y-4 opacity-100 lg:opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-xl"
                 >
-                  <ArrowUpRight className="w-12 h-12" />
+                  <ArrowUpRight className="w-5 h-5 lg:w-6 lg:h-6" />
                 </a>
-
-                {/* Image HUD Labels */}
-                <div className="absolute top-8 left-8 p-4 bg-white/40 backdrop-blur-xl rounded-2xl border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-700">
-                  <div className="text-[8px] font-black text-black tracking-widest uppercase italic">Project_Artifact_Source_{index + 1}</div>
-                </div>
               </div>
 
-              <div className="lg:col-span-5 space-y-10">
-                <div className="flex items-center gap-6">
-                  <div className="text-[10px] font-black text-accent tracking-[0.6em] uppercase border-l-2 border-accent pl-4">{project.category}</div>
-                  <div className="h-px flex-1 bg-black/[0.05]" />
+              <div className="lg:col-span-5 space-y-6 lg:space-y-8 px-2 lg:px-0">
+                <div className="flex items-center gap-4">
+                  <div className="text-[9px] font-bold text-primary tracking-[0.4em] uppercase">{project.category}</div>
+                  <div className="h-[1px] flex-1 bg-white/10" />
+                  <Activity className="w-4 h-4 text-primary opacity-50 animate-pulse" />
                 </div>
 
-                <div className="space-y-4">
-                  <h3 className="text-6xl md:text-7xl font-black text-black tracking-tighter uppercase leading-none">
+                <div className="space-y-2">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight uppercase leading-none group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <div className="text-2xl font-black text-black/20 tracking-tight uppercase italic lowercase font-serif">{project.subtitle}</div>
+                  <div className="text-sm md:text-lg font-bold text-foreground/20 tracking-widest uppercase">{project.subtitle}</div>
                 </div>
 
-                <p className="text-2xl text-black/40 font-bold leading-[0.9] uppercase max-w-lg tracking-tighter">
+                <p className="text-base md:text-xl text-foreground/40 font-medium leading-relaxed uppercase tracking-tighter">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-3 pt-4">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="project-tag">
+                    <span key={tag} className="project-tag px-3 py-1 bg-white/5 border border-white/10 text-[8px] lg:text-[9px] font-bold rounded-full text-foreground/60">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-6 pt-12">
+                <div className="flex gap-4 pt-4 lg:pt-6">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
-                      className="p-7 rounded-[2rem] bg-black/[0.02] border border-black/[0.05] text-black hover:bg-black hover:text-white transition-all duration-700 shadow-sm"
+                      className="p-3 lg:p-4 rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-primary/50 transition-all flex items-center justify-center"
                     >
-                      <Github className="w-8 h-8" />
+                      <Github className="w-4 h-4 lg:w-5 lg:h-5" />
                     </a>
                   )}
                   <a
                     href={project.link}
                     target="_blank"
-                    className="flex-1 px-12 py-7 bg-black text-white rounded-[2rem] font-black text-xs tracking-[0.5em] uppercase flex items-center justify-center gap-4 hover:scale-[1.02] transition-all duration-500 shadow-2xl"
+                    className="flex-1 btn-fin flex items-center justify-center gap-2 text-[8px] lg:text-[10px] tracking-widest px-4 lg:px-6 py-3 lg:py-4"
                   >
-                    DEPLOYED <ArrowUpRight className="w-5 h-5" />
+                    VIEW_LIVE <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>
@@ -340,31 +367,19 @@ const Projects = () => {
 
         {/* View All Button Toggle */}
         {hasMore && (
-          <div className="mt-48 text-center">
+          <div className="mt-32 text-center">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="group inline-flex items-center gap-10 px-16 py-8 bg-black text-white rounded-full font-black text-xs tracking-[0.5em] uppercase transition-all duration-700 hover:scale-105 active:scale-95 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)]"
+              className="btn-outline-fin group flex items-center gap-8 mx-auto py-6"
             >
               <div className="flex flex-col items-center">
-                <span className="text-[8px] opacity-40 mb-1">Toggle_Repository</span>
-                <span>{showAll ? "REDUCE REPOSITORY" : "EXPLORE ALL WORKS"}</span>
+                <span className="text-[8px] opacity-40 mb-1">Toggle View</span>
+                <span>{showAll ? "SHOW LESS" : "VIEW ALL PROJECTS"}</span>
               </div>
-              {showAll ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6 group-hover:translate-y-2 transition-transform" />}
+              {showAll ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />}
             </button>
           </div>
         )}
-
-        {/* Global Repositories Link Section */}
-        <div className="mt-64 border-t-2 border-dashed border-black/[0.05] pt-48 text-center">
-          <div className="hud-label mb-16 italic">End_of_Segments // Deep_Intel_Call</div>
-          <a
-            href="https://github.com/usmanimran-dev"
-            target="_blank"
-            className="inline-flex items-center gap-8 text-6xl md:text-9xl font-black text-black hover:text-accent transition-colors duration-1000 group underline decoration-4 decoration-black/5 underline-offset-[20px] hover:decoration-accent"
-          >
-            GITHUB_CORE <ArrowRight className="w-16 h-16 md:w-32 md:h-32 group-hover:translate-x-12 transition-transform duration-1000" />
-          </a>
-        </div>
 
       </div>
     </section>

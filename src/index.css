@@ -2,33 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Alpine 3D Tech - Ultra-Premium Portfolio Design System */
+/* Fintech Ultra-Premium Portfolio Design System */
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 263.4 70% 50.4%;
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 142.1 70.6% 45.3%; /* Fintech Green */
+  --primary-foreground: 144.9 80.4% 10%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 187 100% 42%; /* Electric Cyan */
   --accent-foreground: 210 40% 98%;
-  --destructive: 0 84.2% 60.2%;
+  --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
-  --radius: 1.5rem;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 142.1 70.6% 45.3%;
+  --radius: 0.75rem;
 
-  /* Holographic Tokens */
-  --holo-purple: 263.4 70% 50.4%;
-  --holo-cyan: 187 100% 42%;
+  /* Fintech Specific Tokens */
+  --fin-green: 142.1 70.6% 45.3%;
+  --fin-blue: 217.2 91.2% 59.8%;
+  --fin-gold: 47.9 95.8% 53.1%;
 }
 
 @layer base {
@@ -42,24 +43,19 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans selection:bg-accent/10 selection:text-accent overflow-x-hidden;
+    @apply bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden;
     font-feature-settings: "rlig" 1, "calt" 1;
-    /* Global Cinematic Texture */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-size: 150px 150px;
-    background-repeat: repeat;
+    
+    /* Fintech Grid Texture */
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
     background-attachment: fixed;
-    opacity: 0.98;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-black tracking-tighter uppercase;
-    line-height: 0.9;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
   }
 
   section {
@@ -68,96 +64,69 @@
 }
 
 @layer components {
-
-  /* Bento Grid Utilities */
-  .bento-grid {
-    @apply grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6;
+  /* Premium Fintech Cards */
+  .fin-card {
+    @apply relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl p-8 transition-all duration-500 hover:border-primary/30 hover:bg-white/[0.04] hover:shadow-[0_0_40px_-15px_rgba(34,197,94,0.1)];
   }
 
-  /* High-Fidelity Alpine Glassmorphism */
-  .bento-card {
-    @apply relative overflow-hidden rounded-[3rem] border border-black/[0.08] bg-white p-10 transition-all duration-1000 hover:border-black/[0.15] hover:scale-[0.99];
+  /* Data Line Decoration */
+  .data-line {
+    @apply h-[1px] w-full bg-gradient-to-right from-transparent via-primary/20 to-transparent;
   }
 
-  .bento-card:hover {
-    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.08);
+  /* Progress/Pulse Indicator */
+  .fin-indicator {
+    @apply flex h-2 w-2 relative;
+  }
+  .fin-indicator-ping {
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75;
+  }
+  .fin-indicator-dot {
+    @apply relative inline-flex rounded-full h-2 w-2 bg-primary;
   }
 
-  /* HUD Elements */
-  .hud-divider {
-    @apply flex items-center gap-6 py-12;
+  /* Fintech Typography */
+  .text-glow {
+    @apply text-foreground drop-shadow-[0_0_15px_rgba(34,197,94,0.3)];
   }
 
-  .hud-line {
-    @apply h-[1px] flex-1 bg-black/[0.03];
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white/80 to-primary/50;
   }
 
-  .hud-label {
-    @apply text-[9px] font-black tracking-[0.5em] text-black/5 uppercase;
+  /* Button Overrides */
+  .btn-fin {
+    @apply px-6 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold transition-all duration-300 hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_-5px_rgba(34,197,94,0.4)];
   }
-
-  /* Holographic Typography */
-  .text-holographic {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-[#8B5CF6] via-[#06B6D4] to-[#D8B4FE] animate-gradient-x;
-  }
-
-  /* Project Tag Styling */
-  .project-tag {
-    @apply inline-flex items-center px-5 py-2 rounded-full text-[10px] font-black tracking-widest uppercase bg-black/[0.03] text-black/60 border border-black/[0.05] backdrop-blur-sm transition-all duration-500 hover:bg-black hover:text-white hover:border-black;
-  }
-}
-
-@keyframes gradient-x {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
+  
+  .btn-outline-fin {
+    @apply px-6 py-2.5 rounded-lg border border-primary/30 bg-primary/5 text-primary font-bold transition-all duration-300 hover:bg-primary/10 hover:border-primary/50;
   }
 }
 
-.animate-gradient-x {
-  animation: gradient-x 15s ease infinite;
+/* Custom Scanline Effect */
+.scanline {
+  width: 100%;
+  height: 100px;
+  z-index: 10;
+  background: linear-gradient(0deg, rgba(34,197,94,0) 0%, rgba(34,197,94,0.02) 50%, rgba(34,197,94,0) 100%);
+  opacity: 0.1;
+  position: absolute;
+  bottom: 100%;
+  animation: scanline 10s linear infinite;
 }
 
-@keyframes blob {
-
-  0%,
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
 }
 
-.animate-blob {
-  animation: blob 10s infinite;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
-
-/* Perspective Utilities */
-.perspective-1000 {
-  perspective: 1000px;
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
