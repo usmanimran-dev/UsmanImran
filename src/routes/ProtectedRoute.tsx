@@ -20,7 +20,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
         );
     }
 
-    return isAdmin ? children : <Navigate to="/login" replace />;
+    return isAdmin ? children : <Navigate to="/?login=true" replace />;
 };
 
 export default ProtectedRoute;

@@ -9,8 +9,13 @@ import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AdminFab from "@/components/AdminFab";
+import Login from "./Login";
+import { useSearchParams } from "react-router-dom";
 
 const Index = () => {
+  const [searchParams] = useSearchParams();
+  const showLogin = searchParams.get("login") === "true";
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -26,6 +31,7 @@ const Index = () => {
       </main>
       <Footer />
       <AdminFab />
+      {showLogin && <Login />}
     </div>
   );
 };

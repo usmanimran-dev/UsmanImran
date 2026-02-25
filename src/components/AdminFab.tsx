@@ -7,7 +7,7 @@ const AdminFab = () => {
 
     return (
         <Link
-            to={isAdmin ? '/admin' : '/login'}
+            to={isAdmin ? '/admin' : '/?login=true'}
             title="Admin Dashboard"
             className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2.5 bg-background/90 hover:bg-white/5 backdrop-blur border border-white/10 hover:border-primary/50 text-white/40 hover:text-primary text-xs font-bold rounded-lg shadow-2xl transition-all duration-300 group"
         >
