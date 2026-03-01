@@ -248,19 +248,19 @@ const Projects = () => {
   }, [activeFilter]);
 
   return (
-    <section id="projects" className="bg-background relative pt-10">
+    <section id="projects" className="bg-white relative pt-10">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
         {/* Fintech Header Transition */}
-        <div className="flex items-center gap-6 mb-12 opacity-30">
+        <div className="flex items-center gap-6 mb-12 opacity-40">
           <div className="h-px w-32 bg-primary" />
-          <div className="text-[10px] font-bold tracking-[0.5em] text-white uppercase">S_04 // MY_PROJECTS</div>
-          <div className="h-px flex-1 bg-white/10" />
+          <div className="text-[10px] font-bold tracking-[0.5em] text-gray-900 uppercase">S_04 // MY_PROJECTS</div>
+          <div className="h-px flex-1 bg-black/[0.06]" />
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-12">
           <div className="space-y-4">
-            <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white uppercase leading-[0.85] md:leading-[0.8]">
+            <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-gray-900 uppercase leading-[0.85] md:leading-[0.8]">
               MY <br />
               <span className="text-primary italic">PROJECTS</span>
             </h2>
@@ -275,8 +275,8 @@ const Projects = () => {
                   setShowAll(false);
                 }}
                 className={`px-8 py-4 rounded-lg text-[10px] font-bold tracking-[0.4em] uppercase transition-all duration-300 border ${activeFilter === filter.id
-                  ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_-5px_rgba(34,197,94,0.4)]"
-                  : "bg-white/5 text-white/40 border-white/10 hover:border-white/20 hover:text-white"
+                  ? "bg-primary text-white border-primary shadow-[0_4px_20px_-5px_rgba(34,197,94,0.3)]"
+                  : "bg-black/[0.02] text-black/40 border-black/[0.08] hover:border-black/20 hover:text-gray-900"
                   }`}
               >
                 {filter.label}
@@ -291,7 +291,7 @@ const Projects = () => {
               key={project.id}
               className="fin-card grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center group cursor-default"
             >
-              <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden rounded-xl bg-background border border-white/10 transition-all duration-700">
+              <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden rounded-xl bg-black border border-black/[0.06] transition-all duration-700">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -299,9 +299,9 @@ const Projects = () => {
                 />
 
                 {/* Image Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
 
-                <div className="absolute top-4 left-4 lg:top-6 lg:left-6 p-2 lg:p-3 bg-black/60 backdrop-blur-md rounded-lg border border-white/10 opacity-100">
+                <div className="absolute top-4 left-4 lg:top-6 lg:left-6 p-2 lg:p-3 bg-white/90 backdrop-blur-md rounded-lg border border-black/[0.08] opacity-100 shadow-sm">
                   <div className="flex items-center gap-1.5 lg:gap-2 text-[8px] font-bold text-primary tracking-widest uppercase">
                     <Lock className="w-2.5 h-2.5" /> <span className="hidden sm:inline">PROJECT_</span>{index + 1}
                   </div>
@@ -310,7 +310,7 @@ const Projects = () => {
                 <a
                   href={project.link}
                   target="_blank"
-                  className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6 w-12 h-12 lg:w-16 lg:h-16 rounded-lg bg-primary text-primary-foreground flex items-center justify-center lg:translate-y-4 opacity-100 lg:opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-xl"
+                  className="absolute bottom-4 right-4 lg:bottom-6 lg:right-6 w-12 h-12 lg:w-16 lg:h-16 rounded-lg bg-primary text-white flex items-center justify-center lg:translate-y-4 opacity-100 lg:opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-xl"
                 >
                   <ArrowUpRight className="w-5 h-5 lg:w-6 lg:h-6" />
                 </a>
@@ -319,24 +319,24 @@ const Projects = () => {
               <div className="lg:col-span-5 space-y-6 lg:space-y-8 px-2 lg:px-0">
                 <div className="flex items-center gap-4">
                   <div className="text-[9px] font-bold text-primary tracking-[0.4em] uppercase">{project.category}</div>
-                  <div className="h-[1px] flex-1 bg-white/10" />
+                  <div className="h-[1px] flex-1 bg-black/[0.06]" />
                   <Activity className="w-4 h-4 text-primary opacity-50 animate-pulse" />
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight uppercase leading-none group-hover:text-primary transition-colors">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight uppercase leading-none group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <div className="text-sm md:text-lg font-bold text-foreground/20 tracking-widest uppercase">{project.subtitle}</div>
+                  <div className="text-sm md:text-lg font-bold text-black/30 tracking-widest uppercase">{project.subtitle}</div>
                 </div>
 
-                <p className="text-base md:text-xl text-foreground/40 font-medium leading-relaxed uppercase tracking-tighter">
+                <p className="text-base md:text-xl text-black/60 font-medium leading-relaxed uppercase tracking-tighter">
                   {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="project-tag px-3 py-1 bg-white/5 border border-white/10 text-[8px] lg:text-[9px] font-bold rounded-full text-foreground/60">
+                    <span key={tag} className="project-tag px-3 py-1 bg-black/[0.04] border border-black/[0.06] text-[8px] lg:text-[9px] font-bold rounded-full text-black/60">
                       {tag}
                     </span>
                   ))}
@@ -347,7 +347,7 @@ const Projects = () => {
                     <a
                       href={project.github}
                       target="_blank"
-                      className="p-3 lg:p-4 rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-primary/50 transition-all flex items-center justify-center"
+                      className="p-3 lg:p-4 rounded-lg bg-black/[0.04] border border-black/[0.08] text-gray-900 hover:bg-black/[0.08] hover:border-primary/50 transition-all flex items-center justify-center"
                     >
                       <Github className="w-4 h-4 lg:w-5 lg:h-5" />
                     </a>
@@ -370,7 +370,7 @@ const Projects = () => {
           <div className="mt-32 text-center">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="btn-outline-fin group flex items-center gap-8 mx-auto py-6"
+              className="btn-outline-fin group flex items-center gap-8 mx-auto py-6 text-gray-900"
             >
               <div className="flex flex-col items-center">
                 <span className="text-[8px] opacity-40 mb-1">Toggle View</span>

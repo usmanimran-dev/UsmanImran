@@ -41,24 +41,24 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="bg-background relative pt-20">
+    <section id="contact" className="bg-white relative pt-20">
 
       {/* Background Fintech Grid */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
-        style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.2) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
         {/* HUD Transition Section */}
-        <div className="flex items-center gap-6 mb-12 opacity-30">
+        <div className="flex items-center gap-6 mb-12 opacity-40">
           <div className="h-px w-32 bg-primary" />
-          <div className="text-[10px] font-bold tracking-[0.5em] text-white uppercase">S_06 // GET_IN_TOUCH</div>
-          <div className="h-px flex-1 bg-white/10" />
+          <div className="text-[10px] font-bold tracking-[0.5em] text-gray-900 uppercase">S_06 // GET_IN_TOUCH</div>
+          <div className="h-px flex-1 bg-black/[0.06]" />
         </div>
 
         <div className="mb-24">
           <div className="text-[10px] font-bold text-primary tracking-[0.8em] uppercase mb-8">Get In Touch</div>
-          <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white uppercase leading-[0.85] md:leading-[0.75]">
+          <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-gray-900 uppercase leading-[0.85] md:leading-[0.75]">
             CONTACT <br />
             <span className="text-primary italic">ME</span>
           </h2>
@@ -68,16 +68,16 @@ const Contact = () => {
 
           {/* Main Transmission Card */}
           <div
-            className="fin-card md:col-span-2 lg:col-span-4 p-12 flex flex-col justify-between min-h-[500px] cursor-pointer hover:border-primary/50 transition-all border-white/5"
+            className="fin-card md:col-span-2 lg:col-span-4 p-12 flex flex-col justify-between min-h-[500px] cursor-pointer hover:border-primary/50 transition-all border-black/[0.06]"
             onClick={() => window.location.href = `mailto:${email}`}
           >
             <div className="flex justify-between items-start">
-              <div className="p-6 bg-primary/10 border border-primary/20 rounded-xl text-primary shadow-2xl group-hover:bg-primary/20 transition-all">
+              <div className="p-6 bg-primary/10 border border-primary/20 rounded-xl text-primary shadow-sm group-hover:bg-primary/15 transition-all">
                 <Mail className="w-10 h-10" />
               </div>
               <button
                 onClick={handleCopyEmail}
-                className="p-4 rounded-lg bg-white/5 border border-white/10 text-white/40 hover:text-white hover:bg-white/10 transition-all flex items-center gap-3"
+                className="p-4 rounded-lg bg-black/[0.04] border border-black/[0.08] text-black/50 hover:text-gray-900 hover:bg-black/[0.08] transition-all flex items-center gap-3"
               >
                 {copied ? <Check className="w-5 h-5 text-primary" /> : <Copy className="w-5 h-5" />}
                 <span className="text-[10px] font-bold uppercase tracking-[0.4em]">{copied ? "SYNCED" : "COPY_PROTO"}</span>
@@ -88,8 +88,8 @@ const Contact = () => {
               <div className="flex items-center gap-4 text-[10px] font-bold text-primary tracking-[0.5em] uppercase border-l-2 border-primary pl-4">
                 Primary Transmission Protocol
               </div>
-              <h3 className="text-4xl md:text-6xl font-bold text-white tracking-tight break-all leading-none uppercase">
-                {email.split('@')[0]}<span className="text-white/20">@{email.split('@')[1]}</span>
+              <h3 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight break-all leading-none uppercase">
+                {email.split('@')[0]}<span className="text-black/30">@{email.split('@')[1]}</span>
               </h3>
             </div>
           </div>
@@ -101,15 +101,15 @@ const Contact = () => {
                 key={i}
                 href={method.href}
                 target="_blank"
-                className="fin-card group flex items-center justify-between p-8 hover:bg-white/[0.04] transition-all border-white/5"
+                className="fin-card group flex items-center justify-between p-8 hover:bg-black/[0.02] transition-all border-black/[0.06]"
               >
                 <div className="flex items-center gap-6">
-                  <div className="p-4 bg-white/5 rounded-lg border border-white/10 group-hover:border-primary/30 transition-all">
+                  <div className="p-4 bg-black/[0.04] rounded-lg border border-black/[0.08] group-hover:border-primary/30 transition-all">
                     <div className="text-primary">{method.icon}</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-[9px] font-bold tracking-widest text-white/20 uppercase">{method.title}</div>
-                    <div className="text-base font-bold text-white tracking-tight uppercase">{method.description}</div>
+                    <div className="text-[9px] font-bold tracking-widest text-black/40 uppercase">{method.title}</div>
+                    <div className="text-base font-bold text-gray-900 tracking-tight uppercase">{method.description}</div>
                   </div>
                 </div>
                 <ArrowUpRight className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-all group-hover:rotate-45" />

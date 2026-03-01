@@ -2,27 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fintech Ultra-Premium Portfolio Design System */
+/* Fintech Ultra-Premium Portfolio — LIGHT Theme */
 
 :root {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 142.1 70.6% 45.3%; /* Fintech Green */
-  --primary-foreground: 144.9 80.4% 10%;
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 187 100% 42%; /* Electric Cyan */
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 62.8% 30.6%;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 142.1 70.6% 45.3%;
+  /* Fintech Green */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 187 100% 42%;
+  /* Electric Cyan */
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
   --ring: 142.1 70.6% 45.3%;
   --radius: 0.75rem;
 
@@ -45,16 +47,21 @@
   body {
     @apply bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden;
     font-feature-settings: "rlig" 1, "calt" 1;
-    
-    /* Fintech Grid Texture */
-    background-image: 
-      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+
+    /* Subtle Light Grid Texture */
+    background-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
     background-size: 40px 40px;
     background-attachment: fixed;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight;
   }
 
@@ -64,9 +71,14 @@
 }
 
 @layer components {
-  /* Premium Fintech Cards */
+
+  /* Premium Fintech Cards — Light */
   .fin-card {
-    @apply relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-xl p-8 transition-all duration-500 hover:border-primary/30 hover:bg-white/[0.04] hover:shadow-[0_0_40px_-15px_rgba(34,197,94,0.1)];
+    @apply relative overflow-hidden rounded-2xl border border-black/[0.06] bg-white p-8 transition-all duration-500 hover:border-primary/30 hover:bg-white;
+  }
+
+  .fin-card:hover {
+    box-shadow: 0 8px 40px -15px rgba(34, 197, 94, 0.12);
   }
 
   /* Data Line Decoration */
@@ -78,53 +90,73 @@
   .fin-indicator {
     @apply flex h-2 w-2 relative;
   }
+
   .fin-indicator-ping {
     @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75;
   }
+
   .fin-indicator-dot {
     @apply relative inline-flex rounded-full h-2 w-2 bg-primary;
   }
 
   /* Fintech Typography */
   .text-glow {
-    @apply text-foreground drop-shadow-[0_0_15px_rgba(34,197,94,0.3)];
+    @apply text-foreground;
+    filter: drop-shadow(0 0 15px rgba(34, 197, 94, 0.2));
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white/80 to-primary/50;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-gray-900 via-gray-700 to-primary/60;
   }
 
   /* Button Overrides */
   .btn-fin {
-    @apply px-6 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold transition-all duration-300 hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_-5px_rgba(34,197,94,0.4)];
+    @apply px-6 py-2.5 rounded-lg bg-primary text-white font-bold transition-all duration-300 hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98];
   }
-  
+
+  .btn-fin:hover {
+    box-shadow: 0 4px 20px -5px rgba(34, 197, 94, 0.35);
+  }
+
   .btn-outline-fin {
     @apply px-6 py-2.5 rounded-lg border border-primary/30 bg-primary/5 text-primary font-bold transition-all duration-300 hover:bg-primary/10 hover:border-primary/50;
   }
 }
 
-/* Custom Scanline Effect */
+/* Custom Scanline Effect — subtle for light */
 .scanline {
   width: 100%;
   height: 100px;
   z-index: 10;
-  background: linear-gradient(0deg, rgba(34,197,94,0) 0%, rgba(34,197,94,0.02) 50%, rgba(34,197,94,0) 100%);
-  opacity: 0.1;
+  background: linear-gradient(0deg, rgba(34, 197, 94, 0) 0%, rgba(34, 197, 94, 0.03) 50%, rgba(34, 197, 94, 0) 100%);
+  opacity: 0.08;
   position: absolute;
   bottom: 100%;
   animation: scanline 10s linear infinite;
 }
 
 @keyframes scanline {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100vh); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {

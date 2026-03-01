@@ -30,19 +30,19 @@ const Skills = () => {
     : skills.filter(skill => skill.category === activeCategory);
 
   return (
-    <section id="skills" className="bg-background relative pt-20">
+    <section id="skills" className="bg-white relative pt-20">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
 
         {/* HUD Transition Section */}
-        <div className="flex items-center gap-6 mb-12 opacity-30">
+        <div className="flex items-center gap-6 mb-12 opacity-40">
           <div className="h-px w-32 bg-primary" />
-          <div className="text-[10px] font-bold tracking-[0.5em] text-white uppercase">S_03 // TECHNICAL_SKILLS</div>
-          <div className="h-px flex-1 bg-white/10" />
+          <div className="text-[10px] font-bold tracking-[0.5em] text-gray-900 uppercase">S_03 // TECHNICAL_SKILLS</div>
+          <div className="h-px flex-1 bg-black/[0.06]" />
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-12">
           <div className="space-y-4">
-            <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white uppercase leading-[0.85] md:leading-[0.8]">
+            <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-gray-900 uppercase leading-[0.85] md:leading-[0.8]">
               TECH <br />
               <span className="text-primary italic">SKILLS</span>
             </h2>
@@ -54,8 +54,8 @@ const Skills = () => {
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-8 py-4 rounded-lg text-[10px] font-bold tracking-[0.4em] uppercase transition-all duration-300 border ${activeCategory === category.id
-                  ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_-5px_rgba(34,197,94,0.4)]"
-                  : "bg-white/5 text-white/40 border-white/10 hover:border-white/20 hover:text-white"
+                  ? "bg-primary text-white border-primary shadow-[0_4px_20px_-5px_rgba(34,197,94,0.3)]"
+                  : "bg-black/[0.02] text-black/40 border-black/[0.08] hover:border-black/20 hover:text-gray-900"
                   } flex items-center gap-3`}
               >
                 {category.icon} {category.label}
@@ -69,40 +69,40 @@ const Skills = () => {
           {filteredSkills.map((skill, index) => (
             <div
               key={skill.name}
-              className="fin-card !p-8 flex flex-col justify-between group group-hover:bg-white/[0.05]"
+              className="fin-card !p-8 flex flex-col justify-between group"
             >
               <div className="flex justify-between items-start mb-10">
-                <div className="text-primary/20 group-hover:text-primary transition-colors">
+                <div className="text-primary/40 group-hover:text-primary transition-colors">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <div className="text-[8px] font-bold text-white/20 tracking-[0.3em] uppercase">{skill.level}</div>
+                <div className="text-[8px] font-bold text-black/30 tracking-[0.3em] uppercase">{skill.level}</div>
               </div>
-              <div className="text-lg font-bold text-white tracking-tight uppercase group-hover:text-primary transition-colors">{skill.name}</div>
+              <div className="text-lg font-bold text-gray-900 tracking-tight uppercase group-hover:text-primary transition-colors">{skill.name}</div>
             </div>
           ))}
         </div>
 
         {/* Summary Bento Row */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="fin-card flex flex-col justify-end min-h-[300px] border-white/5">
+          <div className="fin-card flex flex-col justify-end min-h-[300px] border-black/[0.06]">
             <div className="space-y-6">
               <div className="text-xs font-bold text-primary tracking-[0.5em] uppercase border-l-2 border-primary pl-4">Focus 01</div>
-              <h4 className="text-2xl font-bold text-white mb-2 uppercase leading-none">Cross-Platform</h4>
-              <p className="text-sm text-white/40 font-medium uppercase tracking-tight italic">Unified ecosystems spanning web & mobile secure layers.</p>
+              <h4 className="text-2xl font-bold text-gray-900 mb-2 uppercase leading-none">Cross-Platform</h4>
+              <p className="text-sm text-black/50 font-medium uppercase tracking-tight italic">Unified ecosystems spanning web & mobile secure layers.</p>
             </div>
           </div>
-          <div className="fin-card flex flex-col justify-end min-h-[300px] border-white/5">
+          <div className="fin-card flex flex-col justify-end min-h-[300px] border-black/[0.06]">
             <div className="space-y-6">
-              <div className="text-xs font-bold text-white/20 tracking-[0.5em] uppercase border-l-2 border-white/10 pl-4">Focus 02</div>
-              <h4 className="text-2xl font-bold text-white mb-2 uppercase leading-none">Scalability</h4>
-              <p className="text-sm text-white/40 font-medium uppercase tracking-tight italic">AWS infrastructure with high-frequency data processing.</p>
+              <div className="text-xs font-bold text-black/30 tracking-[0.5em] uppercase border-l-2 border-black/10 pl-4">Focus 02</div>
+              <h4 className="text-2xl font-bold text-gray-900 mb-2 uppercase leading-none">Scalability</h4>
+              <p className="text-sm text-black/50 font-medium uppercase tracking-tight italic">AWS infrastructure with high-frequency data processing.</p>
             </div>
           </div>
-          <div className="fin-card flex flex-col justify-end min-h-[300px] border-white/5">
+          <div className="fin-card flex flex-col justify-end min-h-[300px] border-black/[0.06]">
             <div className="space-y-6">
-              <div className="text-xs font-bold text-white/20 tracking-[0.5em] uppercase border-l-2 border-white/10 pl-4">Focus 03</div>
-              <h4 className="text-2xl font-bold text-white mb-2 uppercase leading-none">Security</h4>
-              <p className="text-sm text-white/40 font-medium uppercase tracking-tight italic">Encrypted communication and resilient backend architecture.</p>
+              <div className="text-xs font-bold text-black/30 tracking-[0.5em] uppercase border-l-2 border-black/10 pl-4">Focus 03</div>
+              <h4 className="text-2xl font-bold text-gray-900 mb-2 uppercase leading-none">Security</h4>
+              <p className="text-sm text-black/50 font-medium uppercase tracking-tight italic">Encrypted communication and resilient backend architecture.</p>
             </div>
           </div>
         </div>

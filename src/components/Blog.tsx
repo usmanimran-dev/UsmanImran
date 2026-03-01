@@ -29,14 +29,14 @@ export default function Blog() {
     ];
 
     return (
-        <section id="blog" className="py-32 bg-background relative overflow-hidden">
+        <section id="blog" className="py-32 bg-white relative overflow-hidden">
 
             {/* HUD Transition Section */}
-            <div className="absolute top-0 left-0 right-0 py-0 opacity-20">
+            <div className="absolute top-0 left-0 right-0 py-0 opacity-40">
                 <div className="flex items-center gap-6">
                     <div className="h-px w-32 bg-primary" />
-                    <div className="text-[10px] font-bold tracking-[0.5em] text-white uppercase">S_06 // BLOG_POSTS</div>
-                    <div className="h-px flex-1 bg-white/10" />
+                    <div className="text-[10px] font-bold tracking-[0.5em] text-gray-900 uppercase">S_06 // BLOG_POSTS</div>
+                    <div className="h-px flex-1 bg-black/[0.06]" />
                 </div>
             </div>
 
@@ -44,7 +44,7 @@ export default function Blog() {
 
                 <div className="mb-16 md:mb-24">
                     <div className="text-[10px] font-bold text-primary tracking-[0.8em] uppercase mb-6 md:mb-8">Blog Posts</div>
-                    <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white uppercase leading-[0.85] md:leading-[0.75]">
+                    <h2 className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-gray-900 uppercase leading-[0.85] md:leading-[0.75]">
                         MY <br />
                         <span className="text-primary italic">BLOG</span>
                     </h2>
@@ -57,29 +57,29 @@ export default function Blog() {
                             href={blog.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="fin-card group relative block p-8 hover:bg-white/[0.04] transition-all border-white/5 cursor-pointer min-h-[320px] flex flex-col justify-between"
+                            className="fin-card group relative block p-8 hover:bg-black/[0.02] transition-all border-black/[0.06] cursor-pointer min-h-[320px] flex flex-col justify-between"
                         >
                             <div>
                                 <div className="flex justify-between items-start mb-6">
-                                    <div className="p-4 bg-primary/10 border border-primary/20 rounded-xl text-primary shadow-lg group-hover:bg-primary/20 transition-all">
+                                    <div className="p-4 bg-primary/10 border border-primary/20 rounded-xl text-primary shadow-sm group-hover:bg-primary/20 transition-all">
                                         <BookOpen className="w-6 h-6" />
                                     </div>
-                                    <ArrowUpRight className="w-5 h-5 text-white/20 group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all group-hover:-translate-y-1 group-hover:translate-x-1" />
+                                    <ArrowUpRight className="w-5 h-5 text-black/30 group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all group-hover:-translate-y-1 group-hover:translate-x-1" />
                                 </div>
 
-                                <h3 className="text-xl font-bold text-white leading-tight mb-4 group-hover:text-primary transition-colors">
+                                <h3 className="text-xl font-bold text-gray-900 leading-tight mb-4 group-hover:text-primary transition-colors">
                                     {blog.title}
                                 </h3>
-                                <p className="text-sm text-foreground/50 leading-relaxed font-medium">
+                                <p className="text-sm text-black/60 leading-relaxed font-medium">
                                     {blog.description}
                                 </p>
                             </div>
 
-                            <div className="flex items-center justify-between pt-6 border-t border-white/5 mt-auto">
+                            <div className="flex items-center justify-between pt-6 border-t border-black/[0.06] mt-auto">
                                 <span className="text-[10px] font-bold tracking-widest text-primary uppercase">
                                     {blog.date}
                                 </span>
-                                <span className="text-[10px] font-bold tracking-widest text-white/30 uppercase border border-white/10 px-3 py-1 rounded-md">
+                                <span className="text-[10px] font-bold tracking-widest text-black/40 uppercase border border-black/[0.08] px-3 py-1 rounded-md">
                                     {blog.readTime}
                                 </span>
                             </div>
